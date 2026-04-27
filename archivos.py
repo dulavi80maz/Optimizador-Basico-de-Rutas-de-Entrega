@@ -9,4 +9,8 @@
 with open("datos.txt" , "w")
 archivo.write("Hola Mundo")
  
-
+#Escribir
+# with open("datos.txt" , "w") as archivo:
+#gregar lineas sin borrar
+with open("datos.txt" , "a") as archivo:
+     archivo.write ("Hola Andrea  \n"  )
