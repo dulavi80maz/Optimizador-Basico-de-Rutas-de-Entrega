@@ -7,10 +7,14 @@
 
 #Escribir
 with open("datos.txt" , "w")
-archivo.write("Hola Mundo")
+     archivo.write("Hola Mundo")
  
 #Escribir
 # with open("datos.txt" , "w") as archivo:
 #gregar lineas sin borrar
 with open("datos.txt" , "a") as archivo:
      archivo.write ("Hola Andrea  \n"  )
+ #lee y muestra en pantalla 
+with open ("datos.txt", "r") as documento:
+     contenido = documento.read ()
+     print (contenido)
