@@ -1,0 +1,39 @@
+def agregar_estudiante():
+    nombre = input("Ingrese el nombre del estudiante: ")
+    with open("estudiantes.txt", "a") as archivo:
+        archivo.write(nombre + "\n")
+    print("Estudiante agregado con éxito.")
+
+def mostrar_estudiantes():
+    print("\n--- Lista de Estudiantes ---")
+    with open("estudiantes.txt", "r") as archivo:
+        print(archivo.read())
+
+def contar_estudiantes():
+    with open("estudiantes.txt", "r") as archivo:
+        lineas = archivo.readlines()
+        total = len(lineas) - 3
+        if total < 0:
+            total = 0
+        print("Total de estudiantes inscritos: " + str(total))
+
+while True:
+    print("\n Menú")
+    print("1) Agregar Estudiante")
+    print("2) Mostrar Estudiantes")
+    print("a) Cantidad de estudiantes")
+    print("3) Salir")
+
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        agregar_estudiante()
+    elif opcion == "2":
+        mostrar_estudiantes()
+    elif opcion == "a":
+        contar_estudiantes()
+    elif opcion == "3":
+        print("Saliendo del programa...")
+        break
+    else:
+        print("Opción invalida. Intente de nuevo.")
