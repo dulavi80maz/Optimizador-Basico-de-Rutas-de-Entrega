@@ -1,0 +1,26 @@
+with open("listado.txt", "w") as archivo:
+    archivo.write("Listado de estudiantes de Ingenieria Industrial: \n")
+
+opcion = "0"
+while opcion != "3":
+
+    print("\n")
+    print("1. Agregar estudiantes")
+    print("2. Mostrar estudiantes")
+    print("3. Salir")
+
+    opcion = input ("Seleccione una opcion ;) : ")
+    if opcion == "1":
+        nombre = input("Ingrese el nombre: ")
+        with open("listado.txt", "a") as archivo:
+            archivo.write(nombre + "\n")
+        print("Estudiante agregado")
+
+    elif opcion == "2":
+        print ("Lista de lo estudiantes:")
+        with open("listado.txt", "r") as documento:
+            contenido = documento.read()
+            print (contenido)
+
+    elif opcion == "3":
+        print ("Salida del programa")
